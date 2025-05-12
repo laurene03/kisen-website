@@ -1,4 +1,7 @@
-<!DOCTYPE html>
-<html>
-    blabla
-</html>
+<main>
+
+
+
+
+
+</main>
