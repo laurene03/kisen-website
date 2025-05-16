@@ -1,36 +1,36 @@
 <?php
 
+session_start();
+
 require_once 'config.php';
 require_once 'app/model/model.php';
+require_once 'app/controller/controller.php';
 
-// 1 - Récupérer la demande de l'utilisateur
+//1 - Récupérer la demande de l'utilisateur
 
-$route='home'; //Paramètre par défaut
+$route='accueil'; //Paramètre par défaut
 
 if (!empty($_GET['route'])) {
     $route=$_GET['route'];
-}
+ }
 
-// 2 - Déterminer les différents cas
+//2 - Déterminer les différents cas
 
 switch ($route) {
-    case 'home':
-        require_once 'app/controller/home.controller.php';
+    case 'accueil':
+        require_once 'app/controller/accueil.controller.php';
         generateHomePage();
+
         break;
 
-    case 'trombi':
-        require_once 'app/controller/trombi.controller.php';
-        generateTrombiPage();
-        break;
+    case 'catalogue':
+        require_once 'app/controller/catalogue.controller.php';
+        generateCataloguePage();
 
-    case 'fiche':
-        require_once 'app/controller/trombi.controller.php';
-        generateFichePage();
         break;
 
     default:
-        exit;
+       exit;
 }
 
 
